@@ -1,0 +1,23 @@
+<h1>Calculator</h1>
+<div>
+  <label>Number 1</label>
+  <input #num1 type="text" placeholder="Enter Number 1">
+</div>
+<div>
+  <label>Number 2</label>
+  <input #num2 type="text" placeholder="Enter Number 2">
+</div>
+<button class="operation" #add_operation value="+" (click)="calculate(num1.value,num2.value,add_operation.value)">Add
+</button>
+<button class="operation" #minus_operation value="-" (click)="calculate(num1.value,num2.value,minus_operation.value)">
+  Minus
+</button>
+<button class="operation" #multi_operation value="*" (click)="calculate(num1.value,num2.value,multi_operation.value)">
+  Multiply
+</button>
+<button class="operation" #divide_operation value="/" (click)="calculate(num1.value,num2.value,divide_operation.value)">
+  Divide
+</button>
+
+<p>The result of calculation: <span>{{result}}</span></p>
+

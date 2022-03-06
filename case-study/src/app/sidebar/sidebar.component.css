@@ -1,0 +1,40 @@
+ul {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  /*background-color: #85CAA0;*/
+}
+
+li {
+  border-bottom: rgba(28, 28, 28, 0.18) solid 1px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+li:hover{
+  background-color: rgba(40, 39, 130, 0.75);
+  animation: fadeOut ease 0.5s;
+}
+
+li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+@keyframes fadeOut {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+li:hover a {
+  color: white;
+}
+
+li a:focus {
+  color: #f05e2d;
+}
+

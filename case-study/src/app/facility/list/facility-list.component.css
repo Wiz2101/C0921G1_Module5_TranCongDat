@@ -1,0 +1,45 @@
+.header_banner{
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/banner01.jpg?id=1433");
+}
+
+.container{
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+}
+.room_card {
+  height: 280px;
+  background-color: #f7f7f7;
+  margin: 20px 0;
+}
+
+.room_card-image {
+  box-shadow: 0 3px 10px #3d403e;
+
+}
+
+.room_card-image img {
+  width: 100%;
+}
+
+
+.room_card h4 {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.room_card h4 a {
+  text-decoration: none;
+  color: #3D403E;
+}
+
+.room_card h4 a:hover {
+  color: #637369;
+}
+
+.room_card p {
+  font-weight: 600;
+  margin-left: 20px;
+}

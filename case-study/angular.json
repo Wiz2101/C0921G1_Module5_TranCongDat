@@ -29,11 +29,10 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-//              "node_modules/jquery/dist/jquery.min.js",
-//              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-//              "node_modules/popper.js/dist/popper.min.js"
-
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/popper.min.js"
             ]
           },
           "configurations": {
@@ -131,6 +130,6 @@
   },
   "defaultProject": "case-study",
   "cli": {
-    "analytics": "11344db7-7b15-4669-afcb-d56683a30466"
+    "analytics": "c806867a-b55d-49f3-bba0-7257753766d5"
   }
 }

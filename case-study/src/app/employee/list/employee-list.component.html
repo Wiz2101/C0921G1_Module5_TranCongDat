@@ -1,0 +1,30 @@
+<div class="header_banner mb-3">
+  <h2 class="text-center">Employee List</h2>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Position</th>
+    <th>Phone</th>
+    <th colspan="3">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employeeObj of employeeList">
+    <td>{{employeeObj.id}}</td>
+    <td>{{employeeObj.name}}</td>
+    <td>{{employeeObj.dOB}}</td>
+    <td>{{employeeObj.position}}</td>
+    <td>{{employeeObj.phone}}</td>
+    <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
+    <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
+    <td style="width: 30px"><a class="btn btn-danger" href="">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
+
+
+

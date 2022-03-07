@@ -1,0 +1,33 @@
+<div class="header_banner mb-3">
+  <h2 class="text-center">Customer List</h2>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Gender</th>
+    <th>Customer Type</th>
+    <th colspan="3">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customerObj of customerList">
+    <td>{{customerObj.id}}</td>
+    <td>{{customerObj.name}}</td>
+    <td>{{customerObj.dOB}}</td>
+    <td>
+      <span *ngIf="customerObj.gender == 0; else elseBlock">Female</span>
+      <ng-template #elseBlock>Male</ng-template>
+    </td>
+    <td>{{customerObj.customerType}}</td>
+    <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
+    <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
+    <td style="width: 30px"><a class="btn btn-danger" href="">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
+
+
+

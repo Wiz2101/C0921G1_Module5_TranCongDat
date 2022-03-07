@@ -1,0 +1,34 @@
+<div class="header_banner mb-3">
+  <h2 class="text-center">Contract List</h2>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Contract Code</th>
+    <th>Customer</th>
+    <th>Facility</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Deposit</th>
+    <th colspan="3">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contractObj of contractList">
+    <td>{{contractObj.id}}</td>
+    <td>{{contractObj.code}}</td>
+    <td>{{contractObj.customer}}</td>
+    <td>{{contractObj.facility}}</td>
+    <td>{{contractObj.startDate}}</td>
+    <td>{{contractObj.endDate}}</td>
+    <td>{{contractObj.deposit | currency: 'VND'}}</td>
+    <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
+    <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
+    <td style="width: 30px"><a class="btn btn-danger" href="">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
+
+
+

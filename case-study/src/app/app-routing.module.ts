@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {ContractModule} from './contract/contract.module';
 import {EmployeeModule} from './employee/employee.module';
 import {FacilityModule} from './facility/facility.module';
 import {CustomerModule} from './customer/customer.module';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'employee',
     loadChildren: () => import('./employee/employee.module').then(module => module.EmployeeModule)
+  },
+  {
+    path: '',
+    component: HomeComponent
   }
 ];
 
@@ -36,4 +41,5 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

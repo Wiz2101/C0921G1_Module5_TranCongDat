@@ -1,3 +1,7 @@
+import {Education} from './education';
+import {Department} from './department';
+import {Position} from './position';
+
 export class Employee {
   private _id: number;
   private _name: string;
@@ -5,12 +9,13 @@ export class Employee {
   private _idCard: string;
   private _phone: string;
   private _email: string;
-  private _education: string;
-  private _position: string;
+  private _education: Education;
+  private _position: Position;
   private _salary: number;
+  private _department: Department;
 
 
-  constructor(id: number, name: string, dOB: string, idCard: string, phone: string, email: string, education: string, position: string, salary: number) {
+  constructor(id: number, name: string, dOB: string, idCard: string, phone: string, email: string, education: Education, position: Position, salary: number, department: Department) {
     this._id = id;
     this._name = name;
     this._dOB = dOB;
@@ -20,6 +25,7 @@ export class Employee {
     this._education = education;
     this._position = position;
     this._salary = salary;
+    this._department = department;
   }
 
 
@@ -71,19 +77,19 @@ export class Employee {
     this._email = value;
   }
 
-  get education(): string {
+  get education(): Education {
     return this._education;
   }
 
-  set education(value: string) {
+  set education(value: Education) {
     this._education = value;
   }
 
-  get position(): string {
+  get position(): Position {
     return this._position;
   }
 
-  set position(value: string) {
+  set position(value: Position) {
     this._position = value;
   }
 
@@ -93,5 +99,13 @@ export class Employee {
 
   set salary(value: number) {
     this._salary = value;
+  }
+
+  get department(): Department {
+    return this._department;
+  }
+
+  set department(value: Department) {
+    this._department = value;
   }
 }

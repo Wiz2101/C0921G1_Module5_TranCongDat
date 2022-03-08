@@ -7,7 +7,7 @@
 
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a routerLink="/home" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Home</a></li>
+          <li class="nav-item active"><a routerLink="/" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Home</a></li>
 
           <li class="nav-item"><a routerLink="/employee/list" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Employee</a>
             <ul class="sub-menu">
@@ -23,7 +23,7 @@
               <li><a routerLink="customer/edit/:id">Customer Edit</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a [routerLink]="['facility/list']" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Facility</a>
+          <li class="nav-item"><a routerLink="facility/visual" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Facility</a>
             <ul class="sub-menu">
               <li><a routerLink="facility/list">Facility List</a></li>
               <li><a routerLink="facility/create">Facility Create</a></li>

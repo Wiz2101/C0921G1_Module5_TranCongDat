@@ -1,0 +1,98 @@
+<h2 class="offset-lg-5">Form Đăng Ký</h2>
+
+<div class="container">
+  <form [formGroup]="registerFrom">
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input type="text" class="form-control" formControlName="email">
+    </div>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.email.hasError('email') && registerFrom.get('email').touched">Invalid Format!</p>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.email.hasError('required')&& registerFrom.get('email').touched">Please Input
+      Email!</p>
+    <fieldset formGroupName="pwGroup">
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+      </div>
+            <p class="my-3 text-danger"
+               *ngIf="registerFrom.get('pwGroup').get('password').hasError('minlength') && registerFrom.get('pwGroup').get('password').touched">
+              At least 6
+              characters</p>
+            <p class="my-3 text-danger"
+               *ngIf="registerFrom.get('pwGroup').get('password').hasError('required')&& registerFrom.get('pwGroup').get('password').touched">
+              Please Input Password!</p>
+
+      <div class="form-group">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword">
+                <p *ngIf="registerFrom.controls.p"></p>
+                <p class="my-3 text-danger"
+                   *ngIf="registerFrom.get('pwGroup').get('confirmPassword').hasError('minlength') && registerFrom.get('pwGroup').get('confirmPassword').dirty">
+                  At least 6 characters</p>
+                <p class="my-3 text-danger"
+                   *ngIf="registerFrom.get('pwGroup').get('confirmPassword').hasError('required')&& registerFrom.get('pwGroup').get('confirmPassword').touched">
+                  Please Input Password!</p>
+
+
+      </div>
+      <p class="my-3 text-danger"
+         *ngIf=" registerFrom.controls.pwGroup.hasError('notmatch') && registerFrom.controls.pwGroup.touched">
+        Different with above password!</p>
+    </fieldset>
+    <div class="form-group">
+      <label class="form-label">Country</label>
+      <select class="form-control" formControlName="country">
+        <option value="" [selected]="true">Please choose option</option>
+        <option value="VN">Viet Nam</option>
+        <option value="US">United States</option>
+        <option value="EN">England</option>
+        <option value="FR">France</option>
+      </select>
+    </div>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.country.hasError('required') && registerFrom.controls.country.touched">Please
+      choose!</p>
+    <div class="form-group">
+      <label class="form-label">Age</label>
+      <input type="date" class="form-control" formControlName="age">
+    </div>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.age.hasError('required') && registerFrom.controls.age.touched">Please Input
+      Age!</p>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.age.hasError('check18') && registerFrom.controls.age.touched">Age must be higher
+      than 18</p>
+    <div class="form-group">
+      <label class="pe-5">Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" value="Male" type="radio" name="gender" formControlName="gender">
+        <label class="form-check-label">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" value="Female" type="radio" name="gender" formControlName="gender">
+        <label class="form-check-label">
+          Female
+        </label>
+      </div>
+    </div>
+    <p *ngIf="registerFrom.controls.gender.hasError('required') && registerFrom.controls.gender.touched"></p>
+    <div class="form-group">
+      <label class="form-label">Phone</label>
+      <input type="text" class="form-control" formControlName="phone">
+    </div>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.phone.hasError('required') && registerFrom.controls.phone.touched">Please Input
+      Phone</p>
+    <p class="my-3 text-danger"
+       *ngIf="registerFrom.controls.phone.hasError('pattern') && registerFrom.controls.phone.touched">Invalid
+      Format!</p>
+    <div class="col-lg-10 offset-md-2">
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+  </form>
+
+</div>

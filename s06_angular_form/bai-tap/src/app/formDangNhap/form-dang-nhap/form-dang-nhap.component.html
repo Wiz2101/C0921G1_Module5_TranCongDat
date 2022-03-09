@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="col-lg-8 offset-lg-2">
+    <h2 class="offset-lg-5">
+      Login Form
+    </h2>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label class="form-label">Email </label>
+        <input class="form-control" type="text" formControlName="username">
+      </div>
+        <p class="my-3 text-danger" *ngIf="loginForm.controls.username.hasError('required') && loginForm.controls.username.touched">Please input username!</p>
+        <p class="my-3 text-danger" *ngIf="loginForm.controls.username.hasError('email') && loginForm.controls.username.touched">This is not an email!</p>
+      <div class="form-group">
+        <label class="form-label">Password </label>
+        <input class="form-control" type="password" formControlName="password">
+      </div>
+      <p class="my-3 text-danger" *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.touched">Please input password!</p>
+      <p class="my-3 text-danger" *ngIf="loginForm.controls.password.hasError('minlength') && loginForm.controls.password.touched">At least 6 characters!</p>
+
+      <button class="btn btn-success offset-lg-5" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

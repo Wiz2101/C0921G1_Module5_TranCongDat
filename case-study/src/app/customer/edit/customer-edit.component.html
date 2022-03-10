@@ -1,37 +1,43 @@
 <div class="header_banner mb-3">
   <h2 class="text-center">Update Customer</h2>
 </div>
-<div class="mb-3">
-  <label for="cus_name" class="form-label">Customer Name</label>
-  <input id="cus_name" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus_birthday" class="form-label">Customer Birthday</label>
-  <input id="cus_birthday" class="form-control" type="date">
-</div>
-<div class="mb-3">
-  <label for="cus_gender" class="form-label">Customer Gender</label>
-  <input id="cus_gender" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus_id_card" class="form-label">Customer ID Card</label>
-  <input id="cus_id_card" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus_phone" class="form-label">Customer Phone</label>
-  <input id="cus_phone" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus_email" class="form-label">Customer Email</label>
-  <input id="cus_email" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus-type" class="form-label">Customer Type</label>
-  <input id="cus-type" class="form-control" type="text">
-</div>
-<div class="mb-3">
-  <label for="cus_service" class="form-label">Service</label>
-  <input id="cus_service" class="form-control" type="text">
-</div>
+<form [formGroup]="customerEdit" (ngSubmit)="editCustomer()">
+  <div class="mb-3" [hidden]="true">
+    <label for="cus_id" class="form-label">Customer ID</label>
+    <input id="cus_id" class="form-control" type="text" formControlName="id">
+  </div>
+  <div class="mb-3">
+    <label for="cus_name" class="form-label">Customer Name</label>
+    <input id="cus_name" class="form-control" type="text" formControlName="name">
+  </div>
+  <div class="mb-3">
+    <label for="cus_birthday" class="form-label">Customer Birthday</label>
+    <input id="cus_birthday" class="form-control" type="date" formControlName="birthday">
+  </div>
+  <div class="mb-3">
+    <label for="cus_gender" class="form-label">Customer Gender</label>
+    <input id="cus_gender" class="form-control" type="text" formControlName="gender">
+  </div>
+  <div class="mb-3">
+    <label for="cus_id_card" class="form-label">Customer ID Card</label>
+    <input id="cus_id_card" class="form-control" type="text" formControlName="idCard">
+  </div>
+  <div class="mb-3">
+    <label for="cus_phone" class="form-label">Customer Phone</label>
+    <input id="cus_phone" class="form-control" type="text" formControlName="phone">
+  </div>
+  <div class="mb-3">
+    <label for="cus_email" class="form-label">Customer Email</label>
+    <input id="cus_email" class="form-control" type="text" formControlName="email">
+  </div>
+  <div class="mb-3">
+    <label for="cus-type" class="form-label">Customer Type</label>
+    <input id="cus-type" class="form-control" type="text" formControlName="customerType">
+  </div>
+  <!--<div class="mb-3">-->
+  <!--  <label for="cus_service" class="form-label">Service</label>-->
+  <!--  <input id="cus_service" class="form-control" type="text">-->
+  <!--</div>-->
 
-<button type="submit" class="btn btn-success d-block mx-auto mb-3">Update</button>
+  <button type="submit" class="btn btn-success d-block mx-auto mb-3">Update</button>
+</form>

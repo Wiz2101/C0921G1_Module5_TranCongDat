@@ -7,7 +7,6 @@ export class CustomerType {
     this._name = name;
   }
 
-
   get id(): number {
     return this._id;
   }

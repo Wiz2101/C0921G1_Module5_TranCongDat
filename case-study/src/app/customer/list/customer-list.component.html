@@ -21,13 +21,10 @@
       <span *ngIf="customerObj.gender == 0; else elseBlock">Female</span>
       <ng-template #elseBlock>Male</ng-template>
     </td>
-    <td>{{customerObj.customerType}}</td>
+    <td>{{customerObj.customerType.name}}</td>
     <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
     <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
-    <td style="width: 30px"><a class="btn btn-danger" href="">Delete</a></td>
+    <td style="width: 30px"><button class="btn btn-danger" (click)="openDialog(customerObj.id)">Delete</button></td>
   </tr>
   </tbody>
 </table>
-
-
-

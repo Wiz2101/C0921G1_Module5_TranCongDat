@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CustomerListComponent} from './list/customer-list.component';
 import {CustomerCreateComponent} from './create/customer-create.component';
 import {CustomerEditComponent} from './edit/customer-edit.component';
+import {CustomerDeleteComponent} from './delete/customer-delete.component';
 
 const  routes: Routes = [
   {
@@ -14,6 +15,9 @@ const  routes: Routes = [
   },
   {
     path: 'edit/:id', component: CustomerEditComponent
+  },
+  {
+    path: 'delete/:id', component: CustomerDeleteComponent
   }
 ];
 

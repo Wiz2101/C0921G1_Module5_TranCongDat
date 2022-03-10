@@ -1,8 +1,8 @@
-import {ICustomer} from '../customer/icustomer';
 import {CustomerType} from './customer-type';
 
 export class Customer{
   private _id: number;
+  private _code: string;
   private _name: string;
   private _dOB: string;
   private _gender: number;
@@ -12,8 +12,10 @@ export class Customer{
   private _customerType: CustomerType;
   private _address: string;
 
-  constructor(id: number, name: string, dOB: string, gender: number, idCard: string, phone: string, email: string, customerType: CustomerType, address: string) {
+
+  constructor(id: number, code: string, name: string, dOB: string, gender: number, idCard: string, phone: string, email: string, customerType: CustomerType, address: string) {
     this._id = id;
+    this._code = code;
     this._name = name;
     this._dOB = dOB;
     this._gender = gender;
@@ -31,6 +33,14 @@ export class Customer{
 
   set id(value: number) {
     this._id = value;
+  }
+
+  get code(): string {
+    return this._code;
+  }
+
+  set code(value: string) {
+    this._code = value;
   }
 
   get name(): string {

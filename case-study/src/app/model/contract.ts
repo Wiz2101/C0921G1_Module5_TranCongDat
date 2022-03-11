@@ -1,24 +1,19 @@
 import {Customer} from './customer';
-import {Facility} from './facility';
+import {Service} from './service';
+import {Employee} from './employee';
 
 export class Contract {
   private _id: number;
   private _code: string;
   private _customer: Customer;
-  private _facility: Facility;
+  private _service: Service;
+  private _employee: Employee;
   private _startDate: string;
   private _endDate: string;
   private _deposit: number;
 
 
-  constructor(id: number, code: string, customer: Customer, facility: Facility, startDate: string, endDate: string, deposit: number) {
-    this._id = id;
-    this._code = code;
-    this._customer = customer;
-    this._facility = facility;
-    this._startDate = startDate;
-    this._endDate = endDate;
-    this._deposit = deposit;
+  constructor() {
   }
 
 
@@ -46,12 +41,20 @@ export class Contract {
     this._customer = value;
   }
 
-  get facility(): Facility {
-    return this._facility;
+  get service(): Service {
+    return this._service;
   }
 
-  set facility(value: Facility) {
-    this._facility = value;
+  set service(value: Service) {
+    this._service = value;
+  }
+
+  get employee(): Employee {
+    return this._employee;
+  }
+
+  set employee(value: Employee) {
+    this._employee = value;
   }
 
   get startDate(): string {

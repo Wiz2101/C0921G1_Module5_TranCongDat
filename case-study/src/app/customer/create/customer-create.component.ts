@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerType} from '../../model/customer-type';
 import {CustomerService} from '../../service/customer.service';
-import {Facility} from '../../model/facility';
-import {FacilityService} from '../../service/facility.service';
+import {Service} from '../../model/service';
+import {ServiceService} from '../../service/service.service';
 
 @Component({
   selector: 'app-create',
@@ -13,10 +13,10 @@ import {FacilityService} from '../../service/facility.service';
 export class CustomerCreateComponent implements OnInit {
   customerCreate: FormGroup;
   customerType: CustomerType[] = [];
-  service: Facility[] = [];
+  service: Service[] = [];
 
   today = new Date();
-  constructor(private cs: CustomerService, private fa: FacilityService) {
+  constructor(private cs: CustomerService, private fa: ServiceService) {
   }
 
   ngOnInit(): void {

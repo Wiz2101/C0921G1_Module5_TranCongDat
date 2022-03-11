@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Facility} from '../../model/facility';
-import {FacilityService} from '../../service/facility.service';
+import {Service} from '../../model/service';
+import {ServiceService} from '../../service/service.service';
 
 @Component({
   selector: 'app-facility-list',
@@ -8,9 +8,9 @@ import {FacilityService} from '../../service/facility.service';
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-  public facilityList: Facility[];
+  public facilityList: Service[];
 
-  constructor(private fa: FacilityService) {
+  constructor(private fa: ServiceService) {
   }
 
   ngOnInit(): void {

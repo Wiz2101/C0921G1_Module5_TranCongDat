@@ -1,7 +1,7 @@
 import {RentType} from './rent-type';
 import {AttachService} from './attach-service';
 
-export class Facility {
+export class Service {
   private _id: number;
   private _name: string;
   private _area: string;

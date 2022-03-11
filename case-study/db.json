@@ -1,0 +1,254 @@
+{
+  "position": [
+    {
+      "id": 1,
+      "name": "Receptionist"
+    },
+    {
+      "id": 2,
+      "name": "Waiter"
+    },
+    {
+      "id": 3,
+      "name": "Executive"
+    },
+    {
+      "id": 4,
+      "name": "Supervisor"
+    },
+    {
+      "id": 5,
+      "name": "Director"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Intermediate"
+    },
+    {
+      "id": 2,
+      "name": "College"
+    },
+    {
+      "id": 3,
+      "name": "Undergraduate"
+    },
+    {
+      "id": 4,
+      "name": "Postgraduate"
+    }
+  ],
+  "department": [
+    {
+      "id": 1,
+      "name": "Sale-Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Administrative"
+    },
+    {
+      "id": 3,
+      "name": "Service"
+    },
+    {
+      "id": 4,
+      "name": "Management"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Nguyen Van An",
+      "birthday": "2000-12-12",
+      "idCard": "205123123",
+      "phone": "0912412123",
+      "email": "annguyen@gmail.com",
+      "education": {
+        "id": 3,
+        "name": "Undergraduate"
+      },
+      "position": {
+        "id": 1,
+        "name": "Receptionist"
+      },
+      "salary": 7000000,
+      "department": {
+        "id": 3,
+        "name": "Service"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "code": "KH-0001",
+      "name": "Nguyen Van An",
+      "birthday": "2000-12-12",
+      "gender": 1,
+      "idCard": "205123123",
+      "phone": "0912412123",
+      "email": "annguyen@gmail.com",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": "Da Nang"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Year"
+    },
+    {
+      "id": 2,
+      "name": "Month"
+    },
+    {
+      "id": 3,
+      "name": "Day"
+    },
+    {
+      "id": 4,
+      "name": "Hour"
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Ocean Suite",
+      "area": "85.5",
+      "cost": 4500000,
+      "maxPeople": "2",
+      "rentType": {
+        "id": 1,
+        "name": "Day"
+      },
+      "attachService": {
+        "id": 1,
+        "name": "Massage",
+        "unit": "Hour",
+        "unitPrice": 450000
+      }
+    }
+  ],
+  "attachService": [
+    {
+      "id": 1,
+      "name": "Massage",
+      "unit": "Hour",
+      "unitPrice": 450000
+    },
+    {
+      "id": 2,
+      "name": "Karaoke",
+      "unit": "Hour",
+      "unitPrice": 10000
+    },
+    {
+      "id": 3,
+      "name": "Buffet",
+      "unit": "Meal",
+      "unitPrice": 100000
+    },
+    {
+      "id": 4,
+      "name": "Bicycle Rental",
+      "unit": "Hour",
+      "unitPrice": 50000
+    },
+    {
+      "id": 5,
+      "name": "Motorbike Rental",
+      "unit": "Hour",
+      "unitPrice": 150000
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "code": "CT-0001",
+      "customer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyen Van An",
+        "birthday": "2000-12-12",
+        "gender": 1,
+        "idCard": "205123123",
+        "phone": "0912412123",
+        "email": "annguyen@gmail.com",
+        "customerType": {
+          "id": 3,
+          "name": "Gold"
+        },
+        "address": "Da Nang"
+      },
+      "service": {
+        "id": 1,
+        "name": "Ocean Suite",
+        "area": "85.5",
+        "cost": 4500000,
+        "maxPeople": 2,
+        "rentType": {
+          "id": 3,
+          "name": "Day"
+        },
+        "attachService": {
+          "id": 1,
+          "name": "Massage",
+          "unit": "Hour",
+          "unitPrice": 450000
+        },
+        "startDate": "2022-03-07",
+        "endDate": "2022-03-09",
+        "deposit": 5000000
+      }
+    }
+  ],
+  "contractDetail": [
+    {
+      "id": 1,
+      "quantity": 5,
+      "contractId": 1,
+      "attachService": 1
+    }
+  ]
+}

@@ -3,8 +3,8 @@ import {CustomerService} from '../../service/customer.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerType} from '../../model/customer-type';
-import {Facility} from '../../model/facility';
-import {FacilityService} from '../../service/facility.service';
+import {Service} from '../../model/service';
+import {ServiceService} from '../../service/service.service';
 
 @Component({
   selector: 'app-edit',
@@ -14,11 +14,11 @@ import {FacilityService} from '../../service/facility.service';
 export class CustomerEditComponent implements OnInit {
   customerEdit: FormGroup;
   customerType: CustomerType[] = [];
-  service: Facility[] = [];
+  service: Service[] = [];
   today = new Date();
 
   constructor(private customerService: CustomerService,
-              private facilityService: FacilityService,
+              private facilityService: ServiceService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
   }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Customer} from '../model/customer';
 import {CustomerType} from '../model/customer-type';
-import {Facility} from '../model/facility';
+import {Service} from '../model/service';
 
 @Injectable({
   providedIn: 'root'

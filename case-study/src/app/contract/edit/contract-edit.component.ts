@@ -48,4 +48,11 @@ export class ContractEditComponent implements OnInit {
       }
     )
   }
+
+  updateContract(){
+    const contractUpdate = this.contractFrom.value;
+    contractUpdate.id = this.contract.id;
+    this.contractService.update(contractUpdate.id, contractUpdate);
+  }
+
 }

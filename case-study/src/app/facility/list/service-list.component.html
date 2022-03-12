@@ -14,16 +14,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let facilityObj of facilityList">
-    <td>{{facilityObj.id}}</td>
-    <td>{{facilityObj.name}}</td>
-    <td>{{facilityObj.area}}</td>
-    <td>{{facilityObj.cost | currency: 'VND'}}</td>
-    <td>{{facilityObj.maxPeople}}</td>
-    <td>{{facilityObj.rentType.name}}</td>
+  <tr *ngFor="let serviceObj of serviceList">
+    <td>{{serviceObj.id}}</td>
+    <td>{{serviceObj.name}}</td>
+    <td>{{serviceObj.area}}</td>
+    <td>{{serviceObj.cost | currency: 'VND'}}</td>
+    <td>{{serviceObj.maxPeople}}</td>
+    <td>{{serviceObj.rentType.name}}</td>
     <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
     <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
-    <td style="width: 30px"><a class="btn btn-danger" href="">Delete</a></td>
+    <td style="width: 30px"><a class="btn btn-danger" (click)="openDialog(serviceObj.id)">Delete</a></td>
   </tr>
   </tbody>
 </table>

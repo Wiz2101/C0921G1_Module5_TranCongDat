@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Employee} from '../../model/employee';
-import {Customer} from '../../model/customer';
 import {EmployeeService} from '../../service/employee.service';
 
 @Component({
@@ -9,13 +8,13 @@ import {EmployeeService} from '../../service/employee.service';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  public employeeList: Employee[];
+  public employeeList: Employee[] = [];
 
-  constructor(private em: EmployeeService) {
+  constructor(private employeeService: EmployeeService) {
   }
 
   ngOnInit(): void {
-    this.employeeList = this.em.getAll();
+    this.employeeService.getAll().subscribe(value => this.employeeList = value);
   }
 
 }

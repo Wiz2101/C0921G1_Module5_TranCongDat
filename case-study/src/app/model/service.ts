@@ -11,16 +11,8 @@ export class Service {
   private _attachService: AttachService;
 
 
-  constructor(id: number, name: string, area: string, cost: number, maxPeople: string, rentType: RentType, attachService: AttachService, startDate: string, endDate: string, number: number) {
-    this._id = id;
-    this._name = name;
-    this._area = area;
-    this._cost = cost;
-    this._maxPeople = maxPeople;
-    this._rentType = rentType;
-    this._attachService = attachService;
+  constructor() {
   }
-
 
   get id(): number {
     return this._id;

@@ -8,13 +8,13 @@ import {ContractService} from '../../service/contract.service';
   styleUrls: ['./contract-list.component.css']
 })
 export class ContractListComponent implements OnInit {
-  public contractList: Contract[];
+  public contractList: Contract[] = [];
 
-  constructor(private co: ContractService) {
+  constructor(private contractService: ContractService) {
   }
 
   ngOnInit(): void {
-    this.contractList = this.co.getAll();
+    this.contractService.getAll().subscribe(value => this.contractList = value);
   }
 
 }

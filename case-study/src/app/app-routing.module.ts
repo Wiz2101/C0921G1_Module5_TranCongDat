@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {ContractModule} from './contract/contract.module';
 import {EmployeeModule} from './employee/employee.module';
-import {FacilityModule} from './facility/facility.module';
+import {ServiceModule} from './facility/service.module';
 import {CustomerModule} from './customer/customer.module';
 import {HomeComponent} from './home/home.component';
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'facility',
-    loadChildren: () => import('./facility/facility.module').then(module => module.FacilityModule)
+    loadChildren: () => import('./facility/service.module').then(module => module.ServiceModule)
   },
   {
     path: 'employee',
@@ -37,7 +37,7 @@ const routes: Routes = [
     ContractModule,
     CustomerModule,
     EmployeeModule,
-    FacilityModule,
+    ServiceModule,
     RouterModule.forRoot(routes)
   ]
 })

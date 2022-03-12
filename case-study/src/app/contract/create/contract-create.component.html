@@ -1,47 +1,49 @@
 <div class="header_banner mb-3">
   <h2 class="text-center">Create Contract</h2>
 </div>
-<div class="mb-3">
-  <label for="con_code" class="form-label">Contract Code</label>
-  <input id="con_code" class="form-control" type="text" formControlName="code">
-</div>
-<div class="mb-3">
-  <label for="con_customer" class="form-label">Customer Code</label>
-  <select id="con_customer" formControlName="customer">
-    <option [selected]="true" value="">--Please Choose Option--</option>
-    <option class="form-select" *ngFor="let customer of customerList" [ngValue]="customer">{{customer.code}}</option>
-  </select>
-</div>
-<div class="mb-3">
-  <label for="con_service" class="form-label">Service</label>
-  <select id="con_service" formControlName="service">
-    <option [selected]="true" value="">--Please Choose Option--</option>
-    <option class="form-select" *ngFor="let service of serviceList" [ngValue]="service">{{service.name}}</option>
-  </select>
-</div>
-<div class="mb-3">
-  <label for="con_employee" class="form-label">Employee</label>
-  <select id="con_employee" formControlName="employee">
-    <option [selected]="true" value="">--Please Choose Option--</option>
-    <option class="form-select" *ngFor="let employee of employeeList" [ngValue]="employee">{{employee.name}}</option>
-  </select>
-</div>
-<div class="mb-3">
-  <label for="con_start-date" class="form-label">Start Date</label>
-  <input id="con_start-date" class="form-control" type="date" formControlName="startDate">
-</div>
-<div class="mb-3">
-  <label for="con_end-date" class="form-label">End Date</label>
-  <input id="con_end-date" class="form-control" type="date" formControlName="endDate">
-</div>
-<div class="mb-3">
-  <label for="con_deposit" class="form-label">Deposit</label>
-  <input id="con_deposit" class="form-control" type="text" formControlName="deposit">
-</div>
-<!--<div class="mb-3">-->
-<!--  <label for="con_total-payment" class="form-label">Total Payment</label>-->
-<!--  <input id="con_total-payment" class="form-control" type="text">-->
-<!--</div>-->
+<form [formGroup]="contractFrom">
+  <div class="mb-3">
+    <label for="con_code" class="form-label">Contract Code</label>
+    <input id="con_code" class="form-control" type="text" formControlName="code">
+  </div>
+  <div class="mb-3">
+    <label for="con_customer" class="form-label">Customer Code</label>
+    <select id="con_customer" formControlName="customer">
+      <option [selected]="true" value="">--Please Choose Option--</option>
+      <option class="form-select" *ngFor="let customer of customerList" [ngValue]="customer">{{customer.code}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="con_service" class="form-label">Service</label>
+    <select id="con_service" formControlName="service">
+      <option [selected]="true" value="">--Please Choose Option--</option>
+      <option class="form-select" *ngFor="let service of serviceList" [ngValue]="service">{{service.name}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="con_employee" class="form-label">Employee</label>
+    <select id="con_employee" formControlName="employee">
+      <option [selected]="true" value="">--Please Choose Option--</option>
+      <option class="form-select" *ngFor="let employee of employeeList" [ngValue]="employee">{{employee.name}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="con_start-date" class="form-label">Start Date</label>
+    <input id="con_start-date" class="form-control" type="date" formControlName="startDate">
+  </div>
+  <div class="mb-3">
+    <label for="con_end-date" class="form-label">End Date</label>
+    <input id="con_end-date" class="form-control" type="date" formControlName="endDate">
+  </div>
+  <div class="mb-3">
+    <label for="con_deposit" class="form-label">Deposit</label>
+    <input id="con_deposit" class="form-control" type="text" formControlName="deposit">
+  </div>
+  <!--<div class="mb-3">-->
+  <!--  <label for="con_total-payment" class="form-label">Total Payment</label>-->
+  <!--  <input id="con_total-payment" class="form-control" type="text">-->
+  <!--</div>-->
 
 
-<button type="submit" class="btn btn-success d-block mx-auto mb-3">Create</button>
+  <button type="submit" class="btn btn-success d-block mx-auto mb-3">Create</button>
+</form>

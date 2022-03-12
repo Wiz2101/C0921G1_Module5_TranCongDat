@@ -1,0 +1,74 @@
+<div class="header_banner mb-3">
+  <h2 class="text-center">Create Service</h2>
+</div>
+<form [formGroup]="serviceForm">
+  <div class="mb-3">
+    <label for="ser_name" class="form-label">Service Name</label>
+    <input id="ser_name" class="form-control" type="text" formControlName="name">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.name.hasError('required') && serviceForm.controls.name.touched"></p>
+  <div class="mb-3">
+    <label for="fac_are" class="form-label">Service Area</label>
+    <input id="fac_are" class="form-control" type="text" formControlName="area">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.area.hasError('required') && serviceForm.controls.area.touched"></p>
+  <div class="mb-3">
+    <label for="ser_cost" class="form-label">Service Cost</label>
+    <input id="ser_cost" class="form-control" type="text" formControlName="cost">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.cost.hasError('required') && serviceForm.controls.cost.touched"></p>
+  <div class="mb-3">
+    <label for="ser_max_people" class="form-label">Max people</label>
+    <input id="ser_max_people" class="form-control" type="text" formControlName="maxPeople">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.maxPeople.hasError('required') && serviceForm.controls.maxPeople.touched"></p>
+  <div class="mb-3">
+    <label for="ser_type" class="form-label">Rent Type</label>
+    <select id="ser_type" formControlName="rentType">
+      <option class="form-select" [selected]="true" value="">--Please choose option--</option>
+      <option *ngFor="let rentType of rentTypeList" [ngValue]="rentType">{{rentType.name}}</option>
+    </select>
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.rentType.hasError('required') && serviceForm.controls.rentType.touched"></p>
+  <div class="mb-3">
+    <label for="fac_standard" class="form-label">Service Standard</label>
+    <input id="fac_standard" class="form-control" type="text" formControlName="standard">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.standard.hasError('required') && serviceForm.controls.standard.touched"></p>
+  <div class="mb-3">
+    <label for="ser_description" class="form-label">Other Description</label>
+    <input id="ser_description" class="form-control" type="text" formControlName="otherDescription">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.otherDescription.hasError('required') && serviceForm.controls.otherDescription.touched"></p>
+  <div class="mb-3">
+    <label for="fac_pool" class="form-label">Service Pool</label>
+    <input id="fac_pool" class="form-control" type="text" formControlName="pool">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.pool.hasError('required') && serviceForm.controls.pool.touched"></p>
+  <div class="mb-3">
+    <label for="fac_floor" class="form-label">Service Floor</label>
+    <input id="fac_floor" class="form-control" type="text" formControlName="floor">
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.floor.hasError('required') && serviceForm.controls.floor.touched"></p>
+  <div class="mb-3">
+    <label for="attach_service" class="form-label">Attach Service</label>
+    <select id="attach_service" formControlName="attachService">
+      <option class="form-select" [selected]="true" value="">--Please choose option--</option>
+      <option *ngFor="let attachService of attachServiceList" [ngValue]="attachService">{{attachService.name}}</option>
+    </select>
+  </div>
+  <p class="text-danger"
+     *ngIf="serviceForm.controls.attachService.hasError('required') && serviceForm.controls.attachService.touched"></p>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-success d-block mx-auto mb-3" (click)="createService()">Create</button>
+  </div>
+</form>

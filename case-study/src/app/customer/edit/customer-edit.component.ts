@@ -5,6 +5,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerType} from '../../model/customer-type';
 import {Service} from '../../model/service';
 import {ServiceService} from '../../service/service.service';
+import {CustomerTypeService} from "../../service/customer-type.service";
+import {Contract} from "../../model/contract";
+import {Customer} from "../../model/customer";
 
 @Component({
   selector: 'app-edit',
@@ -12,38 +15,42 @@ import {ServiceService} from '../../service/service.service';
   styleUrls: ['./customer-edit.component.css']
 })
 export class CustomerEditComponent implements OnInit {
-  customerEdit: FormGroup;
+  customerForm: FormGroup;
+  customer: Customer;
   customerType: CustomerType[] = [];
   service: Service[] = [];
   today = new Date();
 
   constructor(private customerService: CustomerService,
-              private facilityService: ServiceService,
+              private serviceService: ServiceService,
+              private customerTypeService: CustomerTypeService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
+    this.customerTypeService.getAll().subscribe(value => this.customerType = value);
   }
 
   ngOnInit(): void {
     const id = Number(this.activatedRoute.snapshot.params.id);
-    const customer = this.customerService.findById(id);
-    this.customerType = this.customerService.getAllCustomerType();
-    this.service = this.facilityService.getAll();
-    this.customerEdit = new FormGroup({
-      id: new FormControl(customer.id),
-      code: new FormControl(customer.code, [Validators.required, Validators.pattern('^KH-\\d{4}$')]),
-      name: new FormControl(customer.name, Validators.required),
-      birthday: new FormControl(customer.dOB, Validators.required),
-      gender: new FormControl(customer.gender, Validators.required),
-      idCard: new FormControl(customer.idCard, [Validators.required, Validators.pattern('^(\\d{9}|\\d{12})$')]),
-      phone: new FormControl(customer.phone, [Validators.required, Validators.pattern('^(\\(84\\)\\+90|\\(84\\)\\+91|090|091)\\d{7}$')]),
-      email: new FormControl(customer.email, [Validators.required, Validators.email]),
-      customerType: new FormControl(customer.customerType.name, Validators.required)
+    this.customerService.findById(id).subscribe(value => this.customer = value, error => {
+    }, () => this.customerForm.patchValue(this.customer));
+    this.customerForm = new FormGroup({
+      id: new FormControl(''),
+      code: new FormControl('', [Validators.required, Validators.pattern('^KH-\\d{4}$')]),
+      name: new FormControl('', Validators.required),
+      birthday: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required),
+      idCard: new FormControl('', [Validators.required, Validators.pattern('^(\\d{9}|\\d{12})$')]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('^(\\(84\\)\\+90|\\(84\\)\\+91|090|091)\\d{7}$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      customerType: new FormControl('', Validators.required)
       // service: new FormControl(, Validators.required)
     });
   }
 
-  editCustomer(){
-    this.customerService.updateCustomer(this.customerEdit.value);
-    this.router.navigateByUrl('/customer/list')
+  editCustomer() {
+    const customerUpdate = this.customerForm.value;
+    customerUpdate.id = this.customer
+    this.customerService.update(customerUpdate.id, customerUpdate);
+    this.router.navigateByUrl('/customer')
   }
 }

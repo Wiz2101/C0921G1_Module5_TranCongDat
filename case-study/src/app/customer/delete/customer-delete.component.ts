@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer.service';
 import {Customer} from '../../model/customer';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-customer-delete',
@@ -11,12 +12,15 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class CustomerDeleteComponent implements OnInit {
 
   constructor(private customerService: CustomerService,
-              @Inject(MAT_DIALOG_DATA) public data: Customer) { }
+              private router: Router,
+              @Inject(MAT_DIALOG_DATA) public data: Customer) {
+  }
 
   ngOnInit(): void {
   }
 
-  deleteCustomer(id: number){
-    this.customerService.deleteById(id);
+  deleteCustomer(id: number) {
+    this.customerService.deleteById(id).subscribe();
+    this.router.navigateByUrl('/customer');
   }
 }

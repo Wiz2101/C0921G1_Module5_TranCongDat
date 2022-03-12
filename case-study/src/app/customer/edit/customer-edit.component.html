@@ -1,7 +1,7 @@
 <div class="header_banner mb-3">
   <h2 class="text-center">Update Customer</h2>
 </div>
-<form [formGroup]="customerEdit" (ngSubmit)="editCustomer()">
+<form [formGroup]="customerForm" (ngSubmit)="editCustomer()">
   <div class="mb-3" [hidden]="true">
     <label for="cus_id" class="form-label">Customer ID</label>
     <input id="cus_id" class="form-control" type="text" formControlName="id">
@@ -31,8 +31,10 @@
     <input id="cus_email" class="form-control" type="text" formControlName="email">
   </div>
   <div class="mb-3">
-    <label for="cus-type" class="form-label">Customer Type</label>
-    <input id="cus-type" class="form-control" type="text" formControlName="customerType">
+    <label for="cus_type" class="form-label">Customer Type</label>
+    <select id="cus_type" formControlName="customerType">
+      <option [ngValue]="customerType">{{customerType}}</option>
+    </select>
   </div>
   <!--<div class="mb-3">-->
   <!--  <label for="cus_service" class="form-label">Service</label>-->

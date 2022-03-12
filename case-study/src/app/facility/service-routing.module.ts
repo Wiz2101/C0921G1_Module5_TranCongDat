@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink, RouterModule, Routes} from '@angular/router';
 import {FacilityVisualComponent} from './visual/facility-visual.component';
-import {FacilityCreateComponent} from './create/facility-create.component';
-import {FacilityEditComponent} from './edit/facility-edit.component';
-import {FacilityListComponent} from './list/facility-list.component';
+import {ServiceCreateComponent} from './create/service-create.component';
+import {ServiceEditComponent} from './edit/service-edit.component';
+import {ServiceListComponent} from './list/service-list.component';
 
 const routes: Routes = [
   {
     path: 'visual', component: FacilityVisualComponent
   },
   {
-    path: 'list', component: FacilityListComponent
+    path: 'list', component: ServiceListComponent
   },
   {
-    path: 'create', component: FacilityCreateComponent
+    path: 'create', component: ServiceCreateComponent
   },
   {
-    path: 'edit/:id', component: FacilityEditComponent
+    path: 'edit/:id', component: ServiceEditComponent
   }
 ];
 
@@ -29,4 +29,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class FacilityRoutingModule { }
+export class ServiceRoutingModule { }

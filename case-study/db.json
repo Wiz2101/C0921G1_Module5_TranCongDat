@@ -117,6 +117,20 @@
         "name": "Gold"
       },
       "address": "Da Nang"
+    },
+    {
+      "code": "KH-0002",
+      "name": "Nguyen Van B",
+      "birthday": "2022-03-23T17:00:00.000Z",
+      "gender": "1",
+      "idCard": "123123123",
+      "phone": "0913123122",
+      "email": "bnguyen@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 2
     }
   ],
   "rentType": [

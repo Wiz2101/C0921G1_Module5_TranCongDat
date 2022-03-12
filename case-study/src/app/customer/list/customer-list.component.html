@@ -23,7 +23,7 @@
     </td>
     <td>{{customerObj.customerType.name}}</td>
     <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
-    <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>
+    <td style="width: 30px"><a class="btn btn-warning" [routerLink]="['/customer/edit', customerObj.id]">Edit</a></td>
     <td style="width: 30px"><button class="btn btn-danger" (click)="openDialog(customerObj.id)">Delete</button></td>
   </tr>
   </tbody>

@@ -18,8 +18,9 @@
   <tr *ngFor="let contractObj of contractList">
     <td>{{contractObj.id}}</td>
     <td>{{contractObj.code}}</td>
-    <td>{{contractObj.customer}}</td>
-    <td>{{contractObj.service}}</td>
+    <td>{{contractObj.customer.name}}</td>
+    <td>{{contractObj.service.name}}</td>
+    <td>{{contractObj.employee.name}}</td>
     <td>{{contractObj.startDate}}</td>
     <td>{{contractObj.endDate}}</td>
     <td>{{contractObj.deposit | currency: 'VND'}}</td>

@@ -45,7 +45,7 @@ export class CustomerService {
   }
 
   update(id: number, customer: Customer): Observable<void> {
-    return this.httpClient.patch<void>(this.API_URL + 'customer' + id, customer);
+    return this.httpClient.patch<void>(this.API_URL + 'customer' + '/' + id, customer);
   }
 
   deleteById(id: number): Observable<void> {

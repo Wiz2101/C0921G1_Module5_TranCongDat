@@ -8,6 +8,7 @@ import {ServiceService} from '../../service/service.service';
 import {CustomerTypeService} from "../../service/customer-type.service";
 import {Contract} from "../../model/contract";
 import {Customer} from "../../model/customer";
+import {log} from "util";
 
 @Component({
   selector: 'app-edit',
@@ -48,10 +49,15 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
-  editCustomer() {
+  updateCustomer() {
     const customerUpdate = this.customerForm.value;
-    customerUpdate.id = this.customer
-    this.customerService.update(customerUpdate.id, customerUpdate);
-    this.router.navigateByUrl('/customer')
+    console.log('A')
+    console.log(customerUpdate);
+    customerUpdate.id = this.customer.id;
+    console.log('B')
+    console.log('B:' + customerUpdate.id);
+    this.customerService.update(customerUpdate.id, customerUpdate).subscribe(value => {
+    }, error => {
+    }, () => this.router.navigateByUrl('/customer/list'));
   }
 }

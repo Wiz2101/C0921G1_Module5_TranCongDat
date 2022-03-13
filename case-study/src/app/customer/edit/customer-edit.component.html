@@ -1,46 +1,108 @@
-<div class="header_banner mb-3">
+<div class="header_banner form-group mb-3">
   <h2 class="text-center">Update Customer</h2>
 </div>
-<form [formGroup]="customerForm" (ngSubmit)="editCustomer()">
-  <div class="mb-3" [hidden]="true">
-    <label for="cus_id" class="form-label">Customer ID</label>
-    <input id="cus_id" class="form-control" type="text" formControlName="id">
+<form [formGroup]="customerForm">
+  <div class="form-group mb-3">
+    <label for="cus_code" class="form-label">Customer Code</label>
+    <input id="cus_code" class="form-control" type="text" formControlName="code">
   </div>
-  <div class="mb-3">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.touched">Please input
+    code</p>
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.code.hasError('pattern') && customerForm.controls.code.touched">Format must be:
+    KH-XXXX</p>
+  <div class="form-group mb-3">
     <label for="cus_name" class="form-label">Customer Name</label>
     <input id="cus_name" class="form-control" type="text" formControlName="name">
   </div>
-  <div class="mb-3">
-    <label for="cus_birthday" class="form-label">Customer Birthday</label>
-    <input id="cus_birthday" class="form-control" type="date" formControlName="birthday">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.touched">Please input
+    name</p>
+
+  <div class="form-group mb-3">
+    <!--    <label for="cus_birthday" class="form-label">Customer Birthday</label>-->
+    <!--    <input id="cus_birthday" class="form-control" type="date" formControlName="birthday">-->
+    <mat-form-field>
+      <input [min]="today" matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="birthday"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="month"></mat-datepicker>
+    </mat-form-field>
   </div>
-  <div class="mb-3">
-    <label for="cus_gender" class="form-label">Customer Gender</label>
-    <input id="cus_gender" class="form-control" type="text" formControlName="gender">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.birthday.hasError('required') && customerForm.controls.birthday.touched">Please
+    input date</p>
+
+  <div class="form-group mb-3">
+    <label class="form-label">Gender</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="1" formControlName="gender">
+      <label class="form-check-label">Male</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="0" formControlName="gender">
+      <label class="form-check-label">Female</label>
+    </div>
   </div>
-  <div class="mb-3">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.gender.hasError('required') && customerForm.controls.gender.touched">Please input
+    gender</p>
+
+  <div class="form-group mb-3">
     <label for="cus_id_card" class="form-label">Customer ID Card</label>
     <input id="cus_id_card" class="form-control" type="text" formControlName="idCard">
   </div>
-  <div class="mb-3">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.touched">Please input
+    ID card</p>
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.idCard.hasError('pattern') && customerForm.controls.idCard.touched">Format must be
+    only have 9 or 12 digits</p>
+
+  <div class="form-group mb-3">
     <label for="cus_phone" class="form-label">Customer Phone</label>
     <input id="cus_phone" class="form-control" type="text" formControlName="phone">
   </div>
-  <div class="mb-3">
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.phone.hasError('required') && customerForm.controls.phone.touched">Please input
+    phone number</p>
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.phone.hasError('pattern') && customerForm.controls.phone.touched">Phone must be
+    format: 090xxxxxxx | 091xxxxxxx | (84)+90xxxxxxx | (84)+91xxxxxxx</p>
+
+  <div class="form-group mb-3">
     <label for="cus_email" class="form-label">Customer Email</label>
     <input id="cus_email" class="form-control" type="text" formControlName="email">
   </div>
-  <div class="mb-3">
-    <label for="cus_type" class="form-label">Customer Type</label>
-    <select class="form-select" id="cus_type" formControlName="customerType">
-      <option [selected]="true" value="{{this.customerForm.controls.customerType.value}}">{{this.customer.customerType.name}}</option>
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.touched">Please input
+    email</p>
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.email.hasError('pattern') && customerForm.controls.email.touched">Email must be
+    format: example@main.com</p>
+
+  <div class="form-group mb-3">
+    <label for="cus-type" class="form-label">Customer Type</label>
+    <select class="form-select" id="cus-type" formControlName="customerType">
+      <option selected value="">--Please choose option--</option>
       <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
     </select>
   </div>
-  <!--<div class="mb-3">-->
-  <!--  <label for="cus_service" class="form-label">Service</label>-->
-  <!--  <input id="cus_service" class="form-control" type="text">-->
-  <!--</div>-->
+  <p class="my-3 text-danger"
+     *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched">
+    Please input customer type</p>
 
-  <button type="submit" class="btn btn-success d-block mx-auto mb-3">Update</button>
+  <!--  <div class="form-group mb-3">-->
+  <!--    <label for="cus_service" class="form-label">Service</label>-->
+  <!--    <select id="cus_service" class="form-select" formControlName="service">-->
+  <!--      <option selected value="">Please choose option</option>-->
+  <!--      <option *ngFor="let sv of service" value="{{sv.id}}">{{sv.name}}</option>-->
+  <!--    </select>-->
+  <!--  </div>-->
+  <!--  <p class="my-3 text-danger"-->
+  <!--     *ngIf="customerForm.controls.service.hasError('required') && customerForm.controls.service.touched">Please-->
+  <!--    input service</p>-->
+
+  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" (click)="updateCustomer()">Update
+  </button>
 </form>

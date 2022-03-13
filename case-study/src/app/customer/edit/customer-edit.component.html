@@ -32,8 +32,9 @@
   </div>
   <div class="mb-3">
     <label for="cus_type" class="form-label">Customer Type</label>
-    <select id="cus_type" formControlName="customerType">
-      <option [ngValue]="customerType">{{customerType}}</option>
+    <select class="form-select" id="cus_type" formControlName="customerType">
+      <option [selected]="true" value="{{this.customerForm.controls.customerType.value}}">{{this.customer.customerType.name}}</option>
+      <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
     </select>
   </div>
   <!--<div class="mb-3">-->

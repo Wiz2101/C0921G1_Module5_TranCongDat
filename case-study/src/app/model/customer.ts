@@ -4,7 +4,7 @@ export class Customer{
   private _id: number;
   private _code: string;
   private _name: string;
-  private _dOB: string;
+  private _birthday: string;
   private _gender: number;
   private _idCard: string;
   private _phone: string;
@@ -13,19 +13,8 @@ export class Customer{
   private _address: string;
 
 
-  constructor(id: number, code: string, name: string, dOB: string, gender: number, idCard: string, phone: string, email: string, customerType: CustomerType, address: string) {
-    this._id = id;
-    this._code = code;
-    this._name = name;
-    this._dOB = dOB;
-    this._gender = gender;
-    this._idCard = idCard;
-    this._phone = phone;
-    this._email = email;
-    this._customerType = customerType;
-    this._address = address;
+  constructor() {
   }
-
 
   get id(): number {
     return this._id;
@@ -51,12 +40,12 @@ export class Customer{
     this._name = value;
   }
 
-  get dOB(): string {
-    return this._dOB;
+  get birthday(): string {
+    return this._birthday;
   }
 
-  set dOB(value: string) {
-    this._dOB = value;
+  set birthday(value: string) {
+    this._birthday = value;
   }
 
   get gender(): number {

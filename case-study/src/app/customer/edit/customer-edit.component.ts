@@ -16,8 +16,8 @@ import {Customer} from "../../model/customer";
 })
 export class CustomerEditComponent implements OnInit {
   customerForm: FormGroup;
-  customer: Customer;
-  customerType: CustomerType[] = [];
+  customer = new Customer();
+  customerTypeList: CustomerType[] = [];
   service: Service[] = [];
   today = new Date();
 
@@ -26,13 +26,14 @@ export class CustomerEditComponent implements OnInit {
               private customerTypeService: CustomerTypeService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
-    this.customerTypeService.getAll().subscribe(value => this.customerType = value);
   }
 
   ngOnInit(): void {
+    this.customerTypeService.getAll().subscribe(value => this.customerTypeList = value);
     const id = Number(this.activatedRoute.snapshot.params.id);
     this.customerService.findById(id).subscribe(value => this.customer = value, error => {
     }, () => this.customerForm.patchValue(this.customer));
+
     this.customerForm = new FormGroup({
       id: new FormControl(''),
       code: new FormControl('', [Validators.required, Validators.pattern('^KH-\\d{4}$')]),

@@ -16,7 +16,7 @@
   <tr *ngFor="let customerObj of customerList">
     <td>{{customerObj.id}}</td>
     <td>{{customerObj.name}}</td>
-    <td>{{customerObj.dOB}}</td>
+    <td>{{customerObj.birthday}}</td>
     <td>
       <span *ngIf="customerObj.gender == 0; else elseBlock">Female</span>
       <ng-template #elseBlock>Male</ng-template>

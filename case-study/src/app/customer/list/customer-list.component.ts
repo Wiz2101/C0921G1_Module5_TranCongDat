@@ -4,6 +4,7 @@ import {CustomerService} from '../../service/customer.service';
 import {MatDialog} from '@angular/material/dialog';
 import {ActivatedRoute} from '@angular/router';
 import {CustomerDeleteComponent} from '../delete/customer-delete.component';
+import {log} from "util";
 
 
 @Component({
@@ -13,7 +14,8 @@ import {CustomerDeleteComponent} from '../delete/customer-delete.component';
 })
 export class CustomerListComponent implements OnInit {
   public customerList: Customer[];
-  customer = new Customer();
+  customer: Customer;
+
   constructor(private customerService: CustomerService,
               public matDialog: MatDialog) {
 
@@ -21,15 +23,17 @@ export class CustomerListComponent implements OnInit {
 
   ngOnInit(): void {
     this.customerService.getAll().subscribe(value => this.customerList = value);
-
   }
 
   openDialog(id: number) {
+    this.customer = new Customer();
+    this.customerService.findById(id).subscribe(value => this.customer = value);
 
     const dialogRef = this.matDialog.open(CustomerDeleteComponent,
       {
-        data: this.customerService.findById(id).subscribe()
+        data: this.customer
       });
+    console.log(this.customer)
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

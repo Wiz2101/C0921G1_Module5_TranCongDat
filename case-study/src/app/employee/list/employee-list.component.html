@@ -16,8 +16,8 @@
   <tr *ngFor="let employeeObj of employeeList">
     <td>{{employeeObj.id}}</td>
     <td>{{employeeObj.name}}</td>
-    <td>{{employeeObj.dOB}}</td>
-    <td>{{employeeObj.position}}</td>
+    <td>{{employeeObj.birthday}}</td>
+    <td>{{employeeObj.position.name}}</td>
     <td>{{employeeObj.phone}}</td>
     <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
     <td style="width: 30px"><a class="btn btn-warning" href="">Edit</a></td>

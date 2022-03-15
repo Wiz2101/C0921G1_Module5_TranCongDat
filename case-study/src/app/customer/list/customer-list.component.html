@@ -1,6 +1,27 @@
 <div class="header_banner mb-3">
   <h2 class="text-center">Customer List</h2>
 </div>
+<div class="mb-3">
+  <div class="row">
+    <div class="col-lg-4">
+      <label>Name</label>
+      <input class="form-control" type="text" [(ngModel)]="nameSearch">
+    </div>
+    <div class="col-lg-4">
+      <label>Customer Type</label>
+      <select class="form-select" [(ngModel)]="customerTypeSearch">
+        <option [selected]="true" value="" (click)="getValue($event)">--Please Choose Option--</option>
+        <option *ngFor="let customerType of customerTypeList"
+                (click)="getValue(customerType.name)">{{customerType.name}}</option>
+      </select>
+    </div>
+    <div class="col-lg-4">
+      <label>Email</label>
+      <input class="form-control" type="text" [(ngModel)]="emailSearch">
+    </div>
+  </div>
+  <button class="w-25 my-3 btn btn-primary offset-lg-5" (click)="searchCustomer()">Search</button>
+</div>
 <table class="table table-hover">
   <thead>
   <tr>
@@ -9,22 +30,31 @@
     <th>Birthday</th>
     <th>Gender</th>
     <th>Customer Type</th>
+    <th>Email</th>
     <th colspan="3">Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customerObj of customerList">
+  <tr *ngFor="let customerObj of customerList | paginate: { itemsPerPage: 5, currentPage: p }">
     <td>{{customerObj.id}}</td>
     <td>{{customerObj.name}}</td>
-    <td>{{customerObj.birthday}}</td>
+    <td>{{customerObj.birthday | date}}</td>
     <td>
       <span *ngIf="customerObj.gender == 0; else elseBlock">Female</span>
       <ng-template #elseBlock>Male</ng-template>
     </td>
     <td>{{customerObj.customerType.name}}</td>
-    <td style="width: 30px"><a class="btn btn-success " href="">Detail</a></td>
+    <td>{{customerObj.email}}</td>
+
+    <!--    <td style="width: 30px"><a class="btn btn-success " (click)="showDetail(customerObj.id)" </a></td>-->
+
     <td style="width: 30px"><a class="btn btn-warning" [routerLink]="['/customer/edit', customerObj.id]">Edit</a></td>
-    <td style="width: 30px"><button class="btn btn-danger" (click)="openDialog(customerObj.id)">Delete</button></td>
+    <td style="width: 30px">
+      <button class="btn btn-danger" (click)="openDialog(customerObj.id)">Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>
+<div>
+  <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+</div>

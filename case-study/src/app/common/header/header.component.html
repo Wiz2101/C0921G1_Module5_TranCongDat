@@ -13,28 +13,24 @@
             <ul class="sub-menu">
               <li><a routerLink="employee/list" >Employee List</a></li>
               <li><a routerLink="employee/create">Employee Create</a></li>
-              <li><a routerLink="employee/edit/:id">Employee Edit</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a routerLink="/customer/list" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Customer</a>
+          <li class="nav-item"><a class="nav-link text-uppercase font-weight-bold">Customer</a>
             <ul class="sub-menu">
-              <li><a routerLink="customer/list">Customer List</a></li>
+              <li><a [routerLink]="['/customer/list']"  [skipLocationChange]="false">Customer List</a></li>
               <li><a routerLink="customer/create">Customer Create</a></li>
-              <li><a routerLink="customer/edit/:id">Customer Edit</a></li>
             </ul>
           </li>
           <li class="nav-item"><a routerLink="facility/visual" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Service</a>
             <ul class="sub-menu">
               <li><a routerLink="facility/list">Service List</a></li>
               <li><a routerLink="facility/create">Service Create</a></li>
-              <li><a routerLink="facility/edit/:id">Service Edit</a></li>
             </ul>
           </li>
           <li class="nav-item"><a routerLink="/about" routerLinkActive="selected" class="nav-link text-uppercase font-weight-bold">Contract</a>
             <ul class="sub-menu">
               <li><a routerLink="contract/list">Contract List</a></li>
               <li><a routerLink="contract/create">Contract Create</a></li>
-              <li><a routerLink="contract/edit/:id">Contract Edit</a></li>
             </ul>
           </li>
         </ul>

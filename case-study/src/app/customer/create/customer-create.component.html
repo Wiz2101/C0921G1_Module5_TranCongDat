@@ -1,6 +1,7 @@
 <div class="header_banner form-group mb-3">
   <h2 class="text-center">Create Customer</h2>
 </div>
+<a class="mb-3 btn btn-success" routerLink="/customer/list"><i class="bi bi-arrow-left-circle-fill"></i> Back To Customer</a>
 <form [formGroup]="customerForm">
   <div class="form-group mb-3">
     <label for="cus_code" class="form-label">Customer Code</label>
@@ -103,6 +104,6 @@
 <!--     *ngIf="customerForm.controls.service.hasError('required') && customerForm.controls.service.touched">Please-->
 <!--    input service</p>-->
 
-  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" (click)="createCustomer()">Create
+  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" [disabled]="customerForm.invalid" (click)="createCustomer()">Create
   </button>
 </form>

@@ -38,7 +38,7 @@ const routes: Routes = [
     CustomerModule,
     EmployeeModule,
     ServiceModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
   ]
 })
 export class AppRoutingModule {

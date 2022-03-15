@@ -51,4 +51,8 @@ export class CustomerService {
   deleteById(id: number): Observable<void> {
     return this.httpClient.delete<void>(this.API_URL + 'customer' + '/' + id);
   }
+
+  searchByOption(name: string, customerType: string, email: string):Observable<Customer[]>{
+    return this.httpClient.get<Customer[]>(this.API_URL + 'customer' + '?' + 'name_like=' + name + '&' + 'customerType.name_like=' + customerType + '&' + 'email_like=' + email);
+  }
 }

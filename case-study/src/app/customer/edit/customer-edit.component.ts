@@ -32,7 +32,10 @@ export class CustomerEditComponent implements OnInit {
   ngOnInit(): void {
     this.customerTypeService.getAll().subscribe(value => this.customerTypeList = value);
     const id = Number(this.activatedRoute.snapshot.params.id);
-    this.customerService.findById(id).subscribe(value => this.customer = value, error => {
+    this.customerService.findById(id).subscribe(value => {
+      this.customer = value;
+      console.log(this.customer);
+    }, error => {
     }, () => this.customerForm.patchValue(this.customer));
 
     this.customerForm = new FormGroup({
@@ -45,19 +48,22 @@ export class CustomerEditComponent implements OnInit {
       phone: new FormControl('', [Validators.required, Validators.pattern('^(\\(84\\)\\+90|\\(84\\)\\+91|090|091)\\d{7}$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       customerType: new FormControl('', Validators.required)
-      // service: new FormControl(, Validators.required)
     });
   }
 
   updateCustomer() {
-    const customerUpdate = this.customerForm.value;
-    console.log('A')
-    console.log(customerUpdate);
-    customerUpdate.id = this.customer.id;
-    console.log('B')
-    console.log('B:' + customerUpdate.id);
-    this.customerService.update(customerUpdate.id, customerUpdate).subscribe(value => {
-    }, error => {
-    }, () => this.router.navigateByUrl('/customer/list'));
+    if (this.customerForm.invalid) {
+      this.ngOnInit();
+    } else {
+      const customerUpdate = this.customerForm.value;
+      customerUpdate.id = this.customer.id;
+      this.customerService.update(customerUpdate.id, customerUpdate).subscribe(value => {
+      }, error => {
+      }, () => this.router.navigateByUrl('/customer/list', { skipLocationChange: false }));
+    }
+  }
+
+  backToList(){
+    this.ngOnInit();
   }
 }

@@ -14,6 +14,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {HomeComponent} from './home/home.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     RouterTestingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

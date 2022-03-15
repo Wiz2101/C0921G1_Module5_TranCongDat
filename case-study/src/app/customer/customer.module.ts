@@ -12,6 +12,7 @@ import {CustomerListComponent} from './list/customer-list.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CustomerDeleteComponent } from './delete/customer-delete.component';
 import {MatButtonModule} from '@angular/material/button';
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatNativeDateModule,
     MatDialogModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxPaginationModule
   ]
 })
 

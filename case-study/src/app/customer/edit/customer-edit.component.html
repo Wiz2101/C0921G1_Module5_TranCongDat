@@ -1,6 +1,7 @@
 <div class="header_banner form-group mb-3">
   <h2 class="text-center">Update Customer</h2>
 </div>
+<a class="mb-3 btn btn-success" routerLink="/customer/list"><i class="bi bi-arrow-left-circle-fill"></i> Back To Customer</a>
 <form [formGroup]="customerForm">
   <div class="form-group mb-3">
     <label for="cus_code" class="form-label">Customer Code</label>
@@ -84,7 +85,8 @@
   <div class="form-group mb-3">
     <label for="cus-type" class="form-label">Customer Type</label>
     <select class="form-select" id="cus-type" formControlName="customerType">
-      <option selected value="">--Please choose option--</option>
+      <option [selected]="true"
+              [ngValue]="customerForm.controls.customerType.value">{{customerForm.controls.customerType.value.name}}</option>
       <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
     </select>
   </div>
@@ -92,17 +94,7 @@
      *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.customerType.touched">
     Please input customer type</p>
 
-  <!--  <div class="form-group mb-3">-->
-  <!--    <label for="cus_service" class="form-label">Service</label>-->
-  <!--    <select id="cus_service" class="form-select" formControlName="service">-->
-  <!--      <option selected value="">Please choose option</option>-->
-  <!--      <option *ngFor="let sv of service" value="{{sv.id}}">{{sv.name}}</option>-->
-  <!--    </select>-->
-  <!--  </div>-->
-  <!--  <p class="my-3 text-danger"-->
-  <!--     *ngIf="customerForm.controls.service.hasError('required') && customerForm.controls.service.touched">Please-->
-  <!--    input service</p>-->
-
-  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" (click)="updateCustomer()">Update
+  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" [disabled]="customerForm.invalid"
+          (click)="updateCustomer()">Update
   </button>
 </form>

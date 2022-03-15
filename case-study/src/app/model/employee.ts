@@ -5,7 +5,7 @@ import {Position} from './position';
 export class Employee {
   private _id: number;
   private _name: string;
-  private _dOB: string;
+  private _birthday: string;
   private _idCard: string;
   private _phone: string;
   private _email: string;
@@ -18,7 +18,7 @@ export class Employee {
   constructor(id: number, name: string, dOB: string, idCard: string, phone: string, email: string, education: Education, position: Position, salary: number, department: Department) {
     this._id = id;
     this._name = name;
-    this._dOB = dOB;
+    this._birthday = dOB;
     this._idCard = idCard;
     this._phone = phone;
     this._email = email;
@@ -45,12 +45,12 @@ export class Employee {
     this._name = value;
   }
 
-  get dOB(): string {
-    return this._dOB;
+  get birthday(): string {
+    return this._birthday;
   }
 
-  set dOB(value: string) {
-    this._dOB = value;
+  set birthday(value: string) {
+    this._birthday = value;
   }
 
   get idCard(): string {

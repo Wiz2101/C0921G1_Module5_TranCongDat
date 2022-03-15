@@ -14,7 +14,6 @@
       <ul class="list-unstyled fw-normal pb-1 small">
         <li><a class="nav-link" routerLink="employee">Employee List</a></li>
         <li><a class="nav-link" routerLink="employee/create">Employee Create</a></li>
-        <li><a class="nav-link" routerLink="employee/edit/:id">Employee Edit</a></li>
       </ul>
     </div>
   </li>
@@ -27,7 +26,6 @@
       <ul class="list-unstyled fw-normal pb-1 small">
         <li><a class="nav-link" routerLink="customer">Customer List</a></li>
         <li><a class="nav-link" routerLink="customer/create">Customer Create</a></li>
-        <li><a class="nav-link" routerLink="customer/edit/:id">Customer Edit</a></li>
       </ul>
     </div>
   </li>
@@ -40,14 +38,19 @@
       <ul class="list-unstyled fw-normal pb-1 small">
         <li><a class="nav-link" routerLink="service">Service List</a></li>
         <li><a class="nav-link" routerLink="service/create">Service Create</a></li>
-        <li><a class="nav-link" routerLink="service/edit/:id">Service Edit</a></li>
       </ul>
     </div>
   </li>
   <li>
     <a class="btn d-inline-flex align-items-center rounded fw-bold show" data-bs-toggle="collapse"
-       data-bs-target="#components-collapse" aria-expanded="true" aria-current="true">
-      About
+       data-bs-target="#service-collapse" aria-expanded="true" aria-current="true">
+      Service
     </a>
+    <div class="collapse" id="contract-collapse" style="">
+      <ul class="list-unstyled fw-normal pb-1 small">
+        <li><a class="nav-link" routerLink="contract">Contract List</a></li>
+        <li><a class="nav-link" routerLink="contract/create">Contract Create</a></li>
+      </ul>
+    </div>
   </li>
 </ul>

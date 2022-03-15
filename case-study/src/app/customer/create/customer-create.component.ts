@@ -32,15 +32,17 @@ export class CustomerCreateComponent implements OnInit {
       birthday: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       idCard: new FormControl('', [Validators.required, Validators.pattern('^(\\d{9}|\\d{12})$')]),
-      phone: new FormControl('', [Validators.required, Validators.pattern('^(\\(84\\)\\+90|\\(84\\)\\+91|090|091)\\d{7}$')]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('\\+84\\d{9}')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       customerType: new FormControl('', Validators.required),
     });
   }
 
   createCustomer() {
-    this.customerService.save(this.customerForm.value).subscribe(value => {
-    }, error => {
-    }, () => this.router.navigateByUrl('/customer'));
+    if (this.customerForm.invalid) {
+      this.ngOnInit();
+    } else {
+      this.customerService.save(this.customerForm.value).subscribe();
+    }
   }
 }

@@ -4,6 +4,7 @@ import {AttachService} from './attach-service';
 export class Service {
   private _id: number;
   private _name: string;
+  private _image: string;
   private _area: string;
   private _cost: number;
   private _maxPeople: string;
@@ -12,6 +13,14 @@ export class Service {
 
 
   constructor() {
+  }
+
+  get image(): string {
+    return this._image;
+  }
+
+  set image(value: string) {
+    this._image = value;
   }
 
   get id(): number {

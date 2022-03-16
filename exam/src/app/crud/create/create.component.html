@@ -1,0 +1,82 @@
+<div class="header_banner form-group mb-3">
+  <h2 class="text-center">Create</h2>
+</div>
+<a class="mb-3 btn btn-success" routerLink="/container"><i class="bi bi-arrow-left-circle-fill"></i> Back To List</a>
+<form [formGroup]="createForm">
+  <div class="form-group mb-3">
+    <label for="cus_code" class="form-label">Container Code</label>
+    <input id="cus_code" class="form-control" type="text" formControlName="code">
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.code.hasError('required') && createForm.controls.code.touched">Please input
+    code</p>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.code.hasError('pattern') && createForm.controls.code.touched">Format must be:
+    CT-XXXX</p>
+
+  <div class="form-group mb-3">
+    <label for="cus-type" class="form-label">Product</label>
+    <select class="form-select" id="cus-type" formControlName="product">
+      <option [selected]="true" value="" [disabled]="true">--Please choose option--</option>
+      <option *ngFor="let product of productList" [ngValue]="product">{{product.name}}</option>
+    </select>
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.product.hasError('required') && createForm.controls.product.touched">
+    Please input container type</p>
+
+  <div class="form-group mb-3">
+    <label for="cus_name" class="form-label">Quantity</label>
+    <input id="cus_name" class="form-control" type="text" formControlName="quantity">
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.quantity.hasError('required') && createForm.controls.quantity.touched">Please input
+    Quantity</p>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.quantity.hasError('min') && createForm.controls.quantity.touched">Quantity must be positive</p>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.quantity.hasError('pattern') && createForm.controls.quantity.touched">Number Only!</p>
+
+  <div class="form-group mb-3">
+    <label class="form-label">Imported Date</label>
+    <mat-form-field>
+      <input [max]= expriedDate (dateChange)="getImportDate($event)" formControlName="importDate" matInput [matDatepicker]="importDate" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="importDate"></mat-datepicker-toggle>
+      <mat-datepicker #importDate startView="month"></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.importDate.hasError('required') && createForm.controls.importDate.touched">Please
+    input date</p>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.importDate.hasError('max') && createForm.controls.importDate.touched">Imported Date must be higher than Expired Date</p>
+
+  <div class="form-group mb-3">
+    <label class="form-label">Manufacture Date</label>
+    <mat-form-field>
+      <input [max] = importDate formControlName="manufactureDate" matInput [matDatepicker]="manufactureDate" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="manufactureDate"></mat-datepicker-toggle>
+      <mat-datepicker #manufactureDate startView="month"></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.manufactureDate.hasError('required') && createForm.controls.manufactureDate.touched">Please
+    input date</p>
+
+  <div class="form-group mb-3">
+    <label class="form-label">Expired Date</label>
+    <mat-form-field>
+      <input (dateChange)="getExpiredDate($event)" formControlName="expiredDate" matInput [matDatepicker]="expiredDate" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="expiredDate"></mat-datepicker-toggle>
+      <mat-datepicker #expiredDate startView="month"></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <p class="my-3 text-danger"
+     *ngIf="createForm.controls.expiredDate.hasError('required') && createForm.controls.expiredDate.touched">Please
+    input date</p>
+
+
+  <button type="submit" class="btn btn-success d-block mx-auto form-group mb-3" [disabled]="createForm.invalid"
+          (click)="createContainer()">Create
+  </button>
+</form>

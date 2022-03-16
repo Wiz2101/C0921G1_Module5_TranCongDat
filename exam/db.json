@@ -1,0 +1,128 @@
+{
+  "container": [
+    {
+      "code": "CT-0002",
+      "product": {
+        "id": 2,
+        "name": "FL680",
+        "price": 1800000,
+        "unit": "Kit"
+      },
+      "quantity": "2",
+      "importDate": "2022-03-16T17:00:00.000Z",
+      "manufactureDate": "2022-03-01T17:00:00.000Z",
+      "expiredDate": "2022-03-30T17:00:00.000Z",
+      "id": 2
+    },
+    {
+      "code": "CT-0003",
+      "product": {
+        "id": 3,
+        "name": "MOD001",
+        "price": 3200000,
+        "unit": "Kit"
+      },
+      "quantity": "4",
+      "importDate": "2022-03-16T17:00:00.000Z",
+      "manufactureDate": "2022-02-28T17:00:00.000Z",
+      "expiredDate": "2022-03-25T17:00:00.000Z",
+      "id": 3
+    },
+    {
+      "code": "CT-0004",
+      "product": {
+        "id": 2,
+        "name": "FL680",
+        "price": 1800000,
+        "unit": "Kit"
+      },
+      "quantity": "2",
+      "importDate": "2022-03-16T17:00:00.000Z",
+      "manufactureDate": "2022-03-04T17:00:00.000Z",
+      "expiredDate": "2022-03-29T17:00:00.000Z",
+      "id": 4
+    },
+    {
+      "code": "CT-0005",
+      "product": {
+        "id": 3,
+        "name": "MOD001",
+        "price": 3200000,
+        "unit": "Kit"
+      },
+      "quantity": "3",
+      "importDate": "2022-03-07T17:00:00.000Z",
+      "manufactureDate": "2022-03-03T17:00:00.000Z",
+      "expiredDate": "2022-03-24T17:00:00.000Z",
+      "id": 5
+    },
+    {
+      "code": "CT-0007",
+      "product": {
+        "id": 2,
+        "name": "FL680",
+        "price": 1800000,
+        "unit": "Kit"
+      },
+      "quantity": "4",
+      "importDate": "2022-03-09T17:00:00.000Z",
+      "manufactureDate": "2022-03-22T17:00:00.000Z",
+      "expiredDate": "2022-03-25T17:00:00.000Z",
+      "id": 6
+    },
+    {
+      "code": "CT-0009",
+      "product": {
+        "id": 3,
+        "name": "MOD001",
+        "price": 3200000,
+        "unit": "Kit"
+      },
+      "quantity": "2",
+      "importDate": "2022-03-02T17:00:00.000Z",
+      "manufactureDate": "2022-03-16T17:00:00.000Z",
+      "expiredDate": "2022-03-08T17:00:00.000Z",
+      "id": 7
+    },
+    {
+      "code": "CT-0010",
+      "product": {
+        "id": 3,
+        "name": "MOD001",
+        "price": 3200000,
+        "unit": "Kit"
+      },
+      "quantity": "3",
+      "importDate": "2022-02-28T17:00:00.000Z",
+      "manufactureDate": "2022-03-23T17:00:00.000Z",
+      "expiredDate": "2022-03-07T17:00:00.000Z",
+      "id": 8
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "NJ80",
+      "price": 2300000,
+      "unit": "Kit"
+    },
+    {
+      "id": 2,
+      "name": "FL680",
+      "price": 1800000,
+      "unit": "Kit"
+    },
+    {
+      "id": 3,
+      "name": "MOD001",
+      "price": 3200000,
+      "unit": "Kit"
+    },
+    {
+      "id": 4,
+      "name": "MOD002",
+      "price": 3200000,
+      "unit": "Kit"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<div class="container">
+  <a class="btn btn-success my-3" routerLink="/product"><i class="bi bi-arrow-left-circle-fill"></i> BACK TO LIST</a>
+  <h2 class="text-center mb-3">CREATE FORM</h2>
+  <form [formGroup]="createForm" (ngSubmit)="createProduct()">
+    <div class="mb-3">
+      <label>Product Name</label>
+      <input class="form-control" type="text" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label>Manufacturer</label>
+      <input class="form-control" type="text" formControlName="manufacturer">
+    </div>
+    <div class="mb-3">
+      <label>Origin</label>
+      <select class="form-select" formControlName="origin">
+        <option [selected]="true" [disabled]="true" value="">--Please choose option--</option>
+        <option *ngFor="let origin of originList" [ngValue]="origin">{{origin.name}}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label>Unit Price</label>
+      <input class="form-control" type="text" formControlName="unitPrice">
+    </div>
+    <div class="mb-3">
+      <label>Import Date</label>
+      <mat-form-field>
+        <input formControlName="importDate" matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
+    </div>
+    <div class="mb-3">
+      <label>Stock</label>
+      <input class="form-control" type="text" formControlName="stock">
+    </div>
+    <button class="btn btn-success d-block m-auto mb-3">Create</button>
+  </form>
+</div>

@@ -50,7 +50,9 @@ export class CustomerListComponent implements OnInit {
   }
 
   searchCustomer() {
-    this.customerService.searchByOption(this.nameSearch, this.customerTypeSearch, this.emailSearch).subscribe(value => this.customerList = value)
+    this.customerService.searchByOption(this.nameSearch, this.customerTypeSearch, this.emailSearch).subscribe(value => this.customerList = value, error => {
+    }, () => this.p = 0)
+
   }
 
   getValue($event) {

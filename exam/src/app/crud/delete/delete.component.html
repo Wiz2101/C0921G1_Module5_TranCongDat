@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Delete</h2>
+<mat-dialog-content>
+  <p>Would you like to remove customer?</p>
+  <p>ID: {{this.containerDelete.id}}</p>
+  <p>Code: {{this.containerDelete.code}}</p>
+  <p>Product: {{this.containerDelete.product.name}}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="btn btn-light" mat-button mat-dialog-close (click)="noDelete()">Cancel</button>
+  <button class="btn btn-danger" mat-button [mat-dialog-close]="true" (click)="delete(this.containerDelete.id)">Delete</button>
+</mat-dialog-actions>

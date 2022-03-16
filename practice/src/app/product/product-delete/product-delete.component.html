@@ -1,0 +1,5 @@
+<h2>Would you like to delete this product?</h2>
+<p>ID: {{this.product.id}}</p>
+<p>ID: {{this.product.name}}</p>
+<button class="btn btn-light" (click)="closeDialog()">Close</button>
+<button class="btn btn-danger" (click)="deleteProduct(this.product.id)">Delete</button>

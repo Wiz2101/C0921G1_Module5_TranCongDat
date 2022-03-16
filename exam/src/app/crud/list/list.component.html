@@ -1,0 +1,60 @@
+<div class="header_banner mb-3">
+  <h2 class="text-center">List</h2>
+</div>
+<div class="mb-3">
+  <div class="row">
+    <div class="col-lg-4">
+      <label>Product</label>
+      <input class="form-control" type="text" [(ngModel)]="productSearch">
+    </div>
+    <div class="col-lg-4">
+      <label>Expired Date</label>
+      <div>
+        <mat-form-field >
+          <input [(ngModel)]="expiredDateSearch" matInput [matDatepicker]="expiredDate" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="expiredDate"></mat-datepicker-toggle>
+          <mat-datepicker #expiredDate startView="month"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+    </div>
+  </div>
+  <div class="offset-lg-5">
+  <button class="w-25 my-3 btn btn-primary" (click)="searchContainer()">Search</button>
+  <button class="w-25 my-3 btn btn-warning" (click)="clearSearch()">Clear</button>
+  </div>
+</div>
+<div class="my-3">
+  <a class="btn btn-success ms-5" routerLink="/container/create">Import</a>
+</div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Import Date</th>
+    <th>Manufacture Date</th>
+    <th>Expired Date</th>
+    <th colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let container of containerList | paginate: {itemsPerPage: 5, currentPage: p}">
+    <td>{{container.id}}</td>
+    <td>{{container.code}}</td>
+    <td>{{container.product.name}}</td>
+    <td>{{container.quantity}}</td>
+    <td>{{container.importDate | date}}</td>
+    <td>{{container.manufactureDate | date}}</td>
+    <td>{{container.expiredDate | date}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="openDialog(container.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+</div>

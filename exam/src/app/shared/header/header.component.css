@@ -1,0 +1,92 @@
+.navbar {
+  transition: all 0.4s;
+  background-color: #b8c0bb;
+}
+
+.navbar .nav-link {
+  color: #282782;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #f05e2d;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+  background: #f05e2d;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+  color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+  color: #555;
+  text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+  color: #555;
+}
+
+.nav-link {
+  font-weight: 600;
+}
+
+.nav-item {
+  padding: 0 50px;
+}
+
+.sub-menu {
+  background-color: #b8c0bb;
+  list-style-type: none;
+  padding: 0 8px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.sub-menu li {
+  padding: 10px 0;
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: #282782;
+  font-weight: 600;
+}
+
+.nav-item:hover .sub-menu {
+  visibility: visible;
+  animation: fadeOut ease-out 0.3s;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+  .navbar {
+    background: #fff;
+  }
+
+  .navbar .navbar-brand, .navbar .nav-link {
+    color: #555;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "NJ80",
+      "manufacturer": "Keydous",
+      "origin": {
+        "id": 2,
+        "name": "China"
+      },
+      "unitPrice": 2100000,
+      "importDate": "2022-03-25",
+      "stock": "9"
+    },
+    {
+      "id": 2,
+      "name": "FL680",
+      "manufacturer": "FL-Esports",
+      "origin": {
+        "id": 3,
+        "name": "VietNam"
+      },
+      "unitPrice": 1400000,
+      "importDate": "2022-01-21",
+      "stock": 5
+    },
+    {
+      "id": 3,
+      "name": "MOD001",
+      "manufacturer": "Akko",
+      "origin": {
+        "id": 1,
+        "name": "HongKong"
+      },
+      "unitPrice": "3100000",
+      "importDate": "2022-03-12",
+      "stock": "2"
+    },
+    {
+      "id": 4,
+      "name": "Star75",
+      "manufacturer": "Galaxy",
+      "origin": {
+        "id": 1,
+        "name": "HongKong"
+      },
+      "unitPrice": "6700000",
+      "importDate": "2022-03-12",
+      "stock": "4"
+    },
+    {
+      "id": 5,
+      "name": "Epoch",
+      "manufacturer": "Jelly",
+      "origin": {
+        "id": 2,
+        "name": "China"
+      },
+      "unitPrice": "12000000",
+      "importDate": "2022-03-09T17:00:00.000Z",
+      "stock": "2"
+    },
+    {
+      "id": 6,
+      "name": "NJ68",
+      "manufacturer": "Keydous",
+      "origin": {
+        "id": 2,
+        "name": "China"
+      },
+      "unitPrice": "1600000",
+      "importDate": "2022-03-16T17:00:00.000Z",
+      "stock": "2"
+    }
+  ],
+  "origin": [
+    {
+      "id": 1,
+      "name": "HongKong"
+    },
+    {
+      "id": 2,
+      "name": "China"
+    },
+    {
+      "id": 3,
+      "name": "VietNam"
+    }
+  ]
+}
